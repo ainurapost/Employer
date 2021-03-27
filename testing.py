@@ -1,7 +1,7 @@
 from emp import Employee
 import unittest
 
-class testget_employee_by_name(unittest.TestCase):
+class testEmployeClass(unittest.TestCase):
     def test_correct(self):
         employee = Employee()
         res = {
@@ -12,6 +12,9 @@ class testget_employee_by_name(unittest.TestCase):
             "salary": 8200
         }
         self.assertEqual(employee.get_employee_by_name("Liam"), res)
+    def test_get_by_name_bool(self):
+        employee = Employee()
+        self.assertEqual(employee.get_employee_by_name(type(int, bool)), False)
     def test_correct2(self):
         employee = Employee()
         self.assertEqual(employee.get_employee_by_name("Liam"), employee.employee_list[0])
@@ -55,3 +58,14 @@ class testget_employee_by_name(unittest.TestCase):
             "salary": 9999999999
         }
         self.assertEqual(employee.get_employee_by_name("Arli"), res)
+    def test_add_uncorrect(self):
+        employee = Employee()
+        employee.add_employee("Arli", "+1-202-555-9852", "arli@gmail.com", "God", 9999999999)
+        res = {
+            "name": "Arliasd",
+            "phone": "+1-20asdads2-555-9852",
+            "email": "arliasdasd@gasdasdmail.com",
+            "position": "Goasdasdd",
+            "salary": 9999348999999
+        }
+        self.assertEqual(employee.get_employee_by_name("Arli"), False)
