@@ -52,7 +52,7 @@ class Employee:
 
     def add_employee(self, name, phone, email, position, salary):
         accepted_chars = [chr(i) for i in  range(97, 123)] + [chr(i).upper() for i in  range(97, 123)] + \
-                                [str(i) for i in range(10)] + ['-'. '_', '.']
+                                [str(i) for i in range(10)] + ['-', '_', '.']
 
         email = email.split ('@')
         if len(email) != 2:
