@@ -81,3 +81,7 @@ class testEmployeClass(unittest.TestCase):
             "salary": 9999348999999
         }
         self.assertEqual(employee.get_employee_by_name("Arli"), False)
+
+
+if __name__ == '__main__':
+    unittest.main()
