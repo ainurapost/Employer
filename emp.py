@@ -32,13 +32,39 @@ class Employee:
         ]
 
     def get_employee_by_name(self, name):
-        pass
+        for i in self.employee_list:
+            if i["email"] == name:
+                return i
+        return False
+
 
     def get_employee_by_email(self, email):
-        pass
+        for i in self.employee_list:
+            if i["name"] == email:
+                return i
+        return False
 
     def get_employee_by_salary(self, salary):
-        pass
+        for i in self.employee_list:
+            if i["salary"] == salary:
+                return i
+        return False
 
     def add_employee(self, name, phone, email, position, salary):
-        pass
+        if "*@*.*" in email:
+            email = email
+
+        dict1 = {
+            "name": name,
+            "phone": phone,
+            "email": email,
+            "position": position,
+            "salary": salary
+        }
+
+        self.employee_list.append(dict1)
+
+
+
+e1 = Employee()
+e1.get_employee_by_name("L")
