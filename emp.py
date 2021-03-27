@@ -51,8 +51,24 @@ class Employee:
         return False
 
     def add_employee(self, name, phone, email, position, salary):
-        if "*@*.*" in email:
-            email = email
+        accepted_chars = [chr(i) for i in  range(97, 123)] + [chr(i).upper() for i in  range(97, 123)] + \
+                                [str(i) for i in range(10)] + ['-'. '_', '.']
+
+        email = email.split ('@')
+        if len(email) != 2:
+            return False
+        if len(email[0]) < 1:
+            return False
+        if email[1].count('.') != 1:
+            return False
+        for i in email[0]:
+            if i is not accepted_chars:
+                return False
+
+
+
+        print(list(map(chr, range(97, 123))))
+
 
         dict1 = {
             "name": name,
