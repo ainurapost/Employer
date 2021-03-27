@@ -62,7 +62,7 @@ class Employee:
         if email[1].count('.') != 1:
             return False
         for i in email[0]:
-            if i is not accepted_chars:
+            if i not in(accepted_chars):
                 return False
 
 
